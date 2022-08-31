@@ -32,6 +32,7 @@ resource "docker_network" "private_network" {
   name = "roachnet"
   driver = "bridge"
 }
+
 resource "docker_image" "cockroachdb" {
 	name = "cockroachdb/cockroach:latest"
 }
