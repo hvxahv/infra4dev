@@ -13,3 +13,8 @@ terraform init
 ```
 terraform apply
 ```
+
+## Init cockroach
+```
+docker exec -it roach1 ./cockroach init --insecure
+```

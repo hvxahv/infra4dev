@@ -1,13 +1,20 @@
 # consul
 resource "docker_image" "consul" {
-  name = "consul:latest"
+    name = "consul:latest"
 }
 
 resource "docker_container" "consul" {
-  image = docker_image.consul.latest
-  name  = "consul"
-  network_mode = "host"
-  restart = "always"
+    image = docker_image.consul.latest
+    name  = "consul"
+    restart = "always"
+    ports {
+        internal = 8500
+        external = 8500
+    }
+    ports {
+        internal = 8600
+        external = 8600
+    }
 }
 
 # Redis
